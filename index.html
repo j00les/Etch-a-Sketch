@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sketch it!</title>
-    <link rel="stylesheet" href="etch.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -18,10 +19,8 @@
          class="sizing" 
          type="text" 
          placeholder="Grid Size"
-         value="16"
-         onchange="changeSize" >
+         onchange="changeSize(this.value)" >
         <button class="size">Set</button>
-        
     </div>
    
 </body>
