@@ -1,5 +1,20 @@
+:root {
+    --black: #000000;
+    --navy: #14213d;
+    --yellow: #fca311;
+    --gray: #e5e5e5;
+    --white: #FFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .navbar {
-    background-color: #14213d;
+    background-color: var(--navy);
     color: white;
     padding: 10px;
     width: 100%;
@@ -39,6 +54,70 @@
 
 .mode-container {
     height: 32px;
+
+
+}
+
+
+
+/* COLOR PICKER */
+input[type='color'] {
+    -webkit-appearance: none;
+    width: 80px;
+    height: 80px;
+    border: none;
+    background-color: #ffff;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/* COLOR PICKER */
+
+
+
+
+/* SLIDER  */
+input[type='range'] {
+    -webkit-appearance: none;
+    background-color: var(--white);
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    border: 1px solid var(--white);
+    border-radius: 25px;
+    background: var(--gray);
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 25px;
+    margin-top: -8px;
+    background: var(--yellow);
+  }
+/* SLIDER */
+
+
+
+.inbetween {
+    width: 500px;
     text-align: center;
-    
+}
+
+.gridSlider {
+    margin-top: 10px;
+    margin-bottom: 19px;
+}
+
+.brush {
+    margin-top: 10px;
 }
