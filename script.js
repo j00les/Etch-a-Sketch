@@ -27,10 +27,9 @@ function gridMaker(size) {
 
 
 // User input
-function changeSize(input) {
-
-    if (input <= 64) {
-        gridMaker(input)
+function changeSize(value) {
+    if (value <= 64) {
+        gridMaker(value)
     } else {
         console.log('Too many squares')
     }
@@ -87,3 +86,17 @@ document.querySelector(".board").addEventListener('click', (e) => {
     }
 
 })
+
+
+// Grid size via slider
+const sizeValue = document.querySelector('.sizeValue')
+const gridSlider = document.querySelector('.gridSlider')
+
+gridSlider.onmousemove = (e) => updateSizeValue(e.target.value)
+gridSlider.onchange = (e) => changeSize(e.target.value)
+
+
+
+function updateSizeValue(value) {
+    sizeValue.innerHTML = `${value} x ${value}`
+}
