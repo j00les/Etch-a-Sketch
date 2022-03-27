@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,27 +10,31 @@
     <link rel="stylesheet" href="reset.css">
     <script defer src="script.js"></script>
 </head>
-<body>
-    <div class="mode-container">Brush: <span class="mode"></span></div>
-    <div class="board"></div>
-    <div class="buttons">
-        <button onclick="changeColor('black')">Black</button>
-        <button onclick="changeColor('gray')" >Gray</button>
-        <button onclick="changeColor('random')" >Random</button>
-        <button onclick="changeColor('white')" >Eraser</button>
-        <button onclick="resetBoard()">Reset</button>
-        
 
-    </div>
-    
-    <div class="size">
-        <input
-         class="sizing" 
-         type="text" 
-         placeholder="Grid Size"
-         onchange="changeSize(this.value)" >
-        <button class="size">Set</button>
-    </div>
-   
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>Etch a Sketch </h1>
+        </nav>
+    </header>
+    <section class="sketchpad">
+        <div class="mode-container">
+            Brush:
+            <span class="mode"></span>
+        </div>
+        <div class="board"></div>
+        <section class="buttons">
+            <button onclick="changeColor('black')">Black</button>
+            <button onclick="changeColor('gray')">Gray</button>
+            <button onclick="changeColor('random')">Random</button>
+            <button onclick="changeColor('white')">Eraser</button>
+            <button onclick="resetBoard()">Reset</button>
+        </section>
+        <div class="size">
+            <input class="sizing" type="text" placeholder="Grid Size" onchange="changeSize(this.value)">
+            <button class="size">Set</button>
+        </div>
+    </section>
 </body>
+
 </html>
