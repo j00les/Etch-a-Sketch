@@ -1,7 +1,6 @@
 
 let grid;
 
-
 function gridMaker(size) {
     // The grid maker
     const board = document.querySelector('.board');
@@ -38,20 +37,21 @@ function changeSize(input) {
 let color = 'white';
 
 function initialGridColor() {
-    
-    if (color === 'random') {
-        this.style.background = `hsl(${Math.random() * 360}, 50%, 80%)`
-    } else {
-        this.style.backgroundColor = color;
-        
+    if (boardClick) {
+        if (color === 'random') {
+            this.style.background = `hsl(${Math.random() * 360}, 50%, 80%)`
+        } else {
+            this.style.backgroundColor = color;
+            
+        }
     }
     
 }
 
 function changeColor(choice) {
     color = choice
-
 }
+
 //  ---------------------------------------------
 
 
@@ -60,5 +60,23 @@ function resetBoard() {
     const clearGrid = board.querySelectorAll('div')
     clearGrid.forEach((div) => div.style.backgroundColor = 'white');
 
-
+    
 }
+
+// Brush mode active or inactive ----------------
+
+let boardClick = true
+
+document.querySelector(".board").addEventListener('click', (e) => {
+    if(e.target.tagName != 'button'){
+        boardClick = !boardClick
+        if (boardClick == true) {
+            document.querySelector('.mode').textContent = 'Active'
+        } else {
+            document.querySelector('.mode').textContent = 'Deactive'
+        }
+    }
+    
+})
+
+// -----------------------------------
