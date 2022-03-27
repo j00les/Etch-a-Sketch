@@ -1,5 +1,4 @@
 
-let grid;
 const blackBtn = document.querySelector('.blackBtn');
 const grayBtn = document.querySelector('.grayBtn');
 const randomBtn = document.querySelector('.randomBtn');
@@ -19,13 +18,14 @@ function gridMaker(size) {
     const board = document.querySelector('.board');
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-
+    
     // Clear out any existing square that are on the board 
     const clearGrid = board.querySelectorAll('div');
     clearGrid.forEach((div) => div.remove());
-
+    
     // Loops depends on the size input
     for (let i = 0; i < size * size; i++) {
+        let grid;
         grid = document.createElement('div')
         grid.addEventListener('mouseover', initialGridColor)
         grid.style.cssText =
@@ -33,8 +33,6 @@ function gridMaker(size) {
         board.appendChild(grid);
     }
 };
-
-
 
 
 

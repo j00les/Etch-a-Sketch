@@ -18,23 +18,26 @@
         </nav>
     </header>
     <section class="sketchpad">
-        <div class="mode-container">
-            Brush:
-            <span class="mode"></span>
+        <div class="container">
+            <div class="sizeValue">1 x 1</div>
+            <input class="gridSlider" type="range" min="1" max="64" value="1">
         </div>
-        <div class="board"></div>
-        <section class="buttons">
-            <button onclick="changeColor('black')">Black</button>
-            <button onclick="changeColor('gray')">Gray</button>
-            <button onclick="changeColor('random')">Random</button>
-            <button onclick="changeColor('white')">Eraser</button>
-            <button onclick="resetBoard()">Reset</button>
-        </section>
-        <div class="size">
-            <input class="sizing" type="text" placeholder="Grid Size" onchange="changeSize(this.value)">
-            <button class="size">Set</button>
+        <div class="board-and-buttons">
+            <div class="board"></div>
+            <section class="buttons">
+                <button class="blackBtn btn">Black</button>
+                <button class="grayBtn btn">Gray</button>
+                <button class="randomBtn btn">Random</button>
+                <button class="eraseBtn btn">Eraser</button>
+                <button class="resetBtn btn">Reset</button>
+                <div class="mode-container">
+                    Brush: <br>
+                    <span class="mode"></span>
+                </div>
+            </section>
         </div>
     </section>
+
 </body>
 
 </html>
