@@ -1,5 +1,17 @@
 
 let grid;
+const blackBtn = document.querySelector('.blackBtn');
+const grayBtn = document.querySelector('.grayBtn');
+const randomBtn = document.querySelector('.randomBtn');
+const eraseBtn = document.querySelector('.eraseBtn');
+const resetBtn = document.querySelector('.resetBtn')
+
+
+grayBtn.onclick = () => changeColor('gray');
+blackBtn.onclick = () => changeColor('black');
+randomBtn.onclick = () => changeColor('random');
+eraseBtn.onclick = () => changeColor('white');
+resetBtn.onclick = () => resetBoard();
 
 
 function gridMaker(size) {
@@ -40,8 +52,8 @@ function changeSize(value) {
 
 
 // Change grid color 
-let color = 'white';
 
+let color = 'white';
 function initialGridColor() {
     if (boardClick) {
         if (color === 'random') {
