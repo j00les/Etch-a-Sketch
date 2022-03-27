@@ -1,16 +1,15 @@
 
-const blackBtn = document.querySelector('.blackBtn');
-const grayBtn = document.querySelector('.grayBtn');
+
 const randomBtn = document.querySelector('.randomBtn');
 const eraseBtn = document.querySelector('.eraseBtn');
 const resetBtn = document.querySelector('.resetBtn')
+const colorPicker = document.querySelector('.colorPicker')
 
 
-grayBtn.onclick = () => changeColor('gray');
-blackBtn.onclick = () => changeColor('black');
 randomBtn.onclick = () => changeColor('random');
 eraseBtn.onclick = () => changeColor('white');
 resetBtn.onclick = () => resetBoard();
+colorPicker.onchange = (e) => changeColor(e.target.value)
 
 
 function gridMaker(size) {
@@ -27,7 +26,7 @@ function gridMaker(size) {
     for (let i = 0; i < size * size; i++) {
         let grid;
         grid = document.createElement('div')
-        grid.addEventListener('mouseover', initialGridColor)
+        grid.addEventListener('mouseover', initialColor)
         grid.style.cssText =
             'background-color:white; border: 0.2px solid lightgray';
         board.appendChild(grid);
@@ -52,7 +51,7 @@ function changeSize(value) {
 // Change grid color 
 
 let color = 'white';
-function initialGridColor() {
+function initialColor() {
     if (boardClick) {
         if (color === 'random') {
             this.style.background = `hsl(${Math.random() * 360}, 50%, 80%)`
@@ -73,9 +72,7 @@ function changeColor(choice) {
 function resetBoard() {
     const board = document.querySelector('.board');
     const clearGrid = board.querySelectorAll('div')
-    clearGrid.forEach((div) => div.style.backgroundColor = 'white');
-
-
+    clearGrid.forEach(div => div.style.backgroundColor = 'white');
 }
 
 
