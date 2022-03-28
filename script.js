@@ -1,19 +1,31 @@
 
-
+const sizeValue = document.querySelector('.sizeValue')
+const gridSlider = document.querySelector('.gridSlider')
 const randomBtn = document.querySelector('.randomBtn');
 const eraseBtn = document.querySelector('.eraseBtn');
-const resetBtn = document.querySelector('.resetBtn')
-const colorPicker = document.querySelector('.colorPicker')
+const resetBtn = document.querySelector('.resetBtn');
+const colorPicker = document.querySelector('.colorPicker');
+const board = document.querySelector(".board");
+let boardClick = true;
+let color = 'white';
 
 
 randomBtn.onclick = () => changeColor('random');
 eraseBtn.onclick = () => changeColor('white');
 resetBtn.onclick = () => resetBoard();
-colorPicker.onchange = (e) => changeColor(e.target.value)
+colorPicker.onchange = (e) => changeColor(e.target.value);
+gridSlider.onmousemove = (e) => updateSizeValue(e.target.value);
+gridSlider.onchange = (e) => changeSize(e.target.value);
+board.addEventListener('click', (e) => {
+    if (e.target.tagName != 'button') {
+        boardClick = !boardClick;
+    }
+});
 
 
+
+// The grid maker
 function gridMaker(size) {
-    // The grid maker
     const board = document.querySelector('.board');
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -42,15 +54,11 @@ function changeSize(value) {
     } else {
         console.log('Too many squares')
     }
-}
-
-
+};
 
 
 
 // Change grid color 
-
-let color = 'white';
 function initialColor() {
     if (boardClick) {
         if (color === 'random') {
@@ -61,11 +69,12 @@ function initialColor() {
         }
     }
 
-}
+};
+
 
 function changeColor(choice) {
     color = choice
-}
+};
 
 
 // Reset the board 
@@ -73,38 +82,13 @@ function resetBoard() {
     const board = document.querySelector('.board');
     const clearGrid = board.querySelectorAll('div')
     clearGrid.forEach(div => div.style.backgroundColor = 'white');
-}
-
-
-
-
-
-// Brush mode  
-
-let boardClick = true
-document.querySelector(".board").addEventListener('click', (e) => {
-    if (e.target.tagName != 'button') {
-        boardClick = !boardClick
-        if (boardClick == true) {
-            document.querySelector('.mode').textContent = 'Active'
-        } else {
-            document.querySelector('.mode').textContent = 'Inactive'
-
-        }
-    }
-
-})
-
-
-// Grid size via slider
-const sizeValue = document.querySelector('.sizeValue')
-const gridSlider = document.querySelector('.gridSlider')
-
-gridSlider.onmousemove = (e) => updateSizeValue(e.target.value)
-gridSlider.onchange = (e) => changeSize(e.target.value)
-
+};
 
 
 function updateSizeValue(value) {
     sizeValue.innerHTML = `${value} x ${value}`
-}
+};
+
+
+
+
