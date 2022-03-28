@@ -17,11 +17,11 @@ function gridMaker(size) {
     const board = document.querySelector('.board');
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-    
+
     // Clear out any existing square that are on the board 
     const clearGrid = board.querySelectorAll('div');
     clearGrid.forEach((div) => div.remove());
-    
+
     // Loops depends on the size input
     for (let i = 0; i < size * size; i++) {
         let grid;
@@ -80,8 +80,8 @@ function resetBoard() {
 
 
 // Brush mode  
-let boardClick = true
 
+let boardClick = true
 document.querySelector(".board").addEventListener('click', (e) => {
     if (e.target.tagName != 'button') {
         boardClick = !boardClick
@@ -89,6 +89,7 @@ document.querySelector(".board").addEventListener('click', (e) => {
             document.querySelector('.mode').textContent = 'Active'
         } else {
             document.querySelector('.mode').textContent = 'Inactive'
+
         }
     }
 
