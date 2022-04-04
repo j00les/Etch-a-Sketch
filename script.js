@@ -23,7 +23,6 @@ board.addEventListener('click', (e) => {
 });
 
 
-
 // The grid maker
 function gridMaker(size) {
     const board = document.querySelector('.board');
@@ -45,8 +44,6 @@ function gridMaker(size) {
     }
 };
 
-
-
 // User input
 function changeSize(value) {
     if (value <= 64) {
@@ -55,8 +52,6 @@ function changeSize(value) {
         console.log('Too many squares')
     }
 };
-
-
 
 // Change grid color 
 function initialColor() {
