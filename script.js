@@ -66,11 +66,9 @@ function initialColor() {
 
 };
 
-
 function changeColor(choice) {
     color = choice
 };
-
 
 // Reset the board 
 function resetBoard() {
