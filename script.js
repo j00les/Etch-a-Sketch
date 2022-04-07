@@ -10,12 +10,13 @@ let boardClick = true;
 let color = 'white';
 
 
-randomBtn.onclick = () => changeColor('random');
+randomBtn.onclick = () => changeColor('random')
 eraseBtn.onclick = () => changeColor('white');
 resetBtn.onclick = () => resetBoard();
 colorPicker.onchange = (e) => changeColor(e.target.value);
 gridSlider.onmousemove = (e) => updateSizeValue(e.target.value);
 gridSlider.onchange = (e) => changeSize(e.target.value);
+board.click = (e) => activateClick(e.target.tagName)
 board.addEventListener('click', (e) => {
     if (e.target.tagName != 'button') {
         boardClick = !boardClick;
@@ -23,7 +24,9 @@ board.addEventListener('click', (e) => {
 });
 
 
-// The grid maker
+
+
+
 function gridMaker(size) {
     const board = document.querySelector('.board');
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
